@@ -1,21 +1,3 @@
 # ninja log v6
-19	926	7547968897248517	CMakeFiles/testTime.dir/main.cpp.obj	b9dd017b51df34d9
-928	1223	7547968906365736	testTime.exe	708bdf99eb8a1a1
-13	697	7547969386995869	CMakeFiles/testTime.dir/main.cpp.obj	b9dd017b51df34d9
-698	873	7547969393847815	testTime.exe	708bdf99eb8a1a1
-9	916	7547969932937220	CMakeFiles/testTime.dir/main.cpp.obj	b9dd017b51df34d9
-916	1109	7547969942014422	testTime.exe	708bdf99eb8a1a1
-10	879	7547971129377772	CMakeFiles/testTime.dir/main.cpp.obj	b9dd017b51df34d9
-880	1108	7547971138068942	testTime.exe	708bdf99eb8a1a1
-8	838	7547972159399484	CMakeFiles/testTime.dir/main.cpp.obj	b9dd017b51df34d9
-840	985	7547972167717647	testTime.exe	708bdf99eb8a1a1
-9	692	7547972804450116	CMakeFiles/testTime.dir/main.cpp.obj	b9dd017b51df34d9
-693	874	7547972811280556	testTime.exe	708bdf99eb8a1a1
-11	786	7547973751082025	CMakeFiles/testTime.dir/main.cpp.obj	b9dd017b51df34d9
-787	934	7547973758848423	testTime.exe	708bdf99eb8a1a1
-7	541	7547983022534856	CMakeFiles/testTime.dir/main.cpp.obj	b9dd017b51df34d9
-541	656	7547983027866761	testTime.exe	708bdf99eb8a1a1
-40	763	7547994409001701	CMakeFiles/testTime.dir/main.cpp.obj	b9dd017b51df34d9
-763	923	7547994416236317	testTime.exe	708bdf99eb8a1a1
 5	482	7547996405458934	CMakeFiles/testTime.dir/main.cpp.obj	b9dd017b51df34d9
 482	596	7547996410228749	testTime.exe	708bdf99eb8a1a1

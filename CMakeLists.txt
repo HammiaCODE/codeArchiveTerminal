@@ -4,4 +4,9 @@ project(testTime)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(testTime main.cpp
-        bubbleSort.h)
+        bubbleSort.h
+        linearSearch.h
+        binarySearch.h
+        selectionSort.h
+        mergeSort.h
+        mergeSort.h)

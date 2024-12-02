@@ -10,7 +10,7 @@ using namespace std;
 
 class binarySearchAlg {
 public:
-    int binarySearch(int arr[], int low, int high, int x)
+    int binarySearch(const vector<int>& arr, int low, int high, int x)
     {
         if (high >= low) {
             int mid = low + (high - low) / 2;

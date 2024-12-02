@@ -9,4 +9,8 @@ add_executable(testTime main.cpp
         binarySearch.h
         selectionSort.h
         mergeSort.h
-        mergeSort.h)
+        mergeSort.h
+        quickSort.h
+        quickSort.h
+        insertionSort.h
+        insertionSort.h)

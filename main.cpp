@@ -1,8 +1,20 @@
 #include <iostream>
-#include "bubbleSort.h"
 #include <vector>
 #include <string>
 #include <iostream>
+#include <array>
+#include <algorithm>
+
+
+
+//CODES
+#include "binarySearch.h"
+#include "linearSearch.h"
+#include "bubbleSort.h"
+#include "mergeSort.h"
+#include "selectionSort.h"
+#include "quickSort.h"
+#include "insertionSort.h"
 
 using namespace std;
 
@@ -40,13 +52,82 @@ int main() {
             cout << "VISIT: ";
             cin >> check;
 
+            //LINEAR SEARCH
+
             if(check==1) {
+                cout << "------------------------------------------------------------"<<endl;
                 cout << "LINEAR SEARCH"<< endl;
+                linearSearchAlg lineSearch;
 
-            }else if(check==2) {
+                vector<int> linearData;
+                int linearSize;
+                int linearVal;
+
+                cout << "Size of the array: ";
+                cin>>linearSize;
+
+                for(int i =0;i<linearSize;i++) {
+                    cout << "Type number: ";
+                    cin >> linearVal;
+                    linearData.push_back(linearVal);
+                }
+
+                int look;
+                cout << "Search: ";
+                cin >> look;
+
+                int result = lineSearch.linearSearch(linearData,look);
+
+                if(result==-1) {
+                    cout << "Element not found :(" << endl;
+                } else {
+                    cout << "Element " << look << " found at index "<< result;
+                    cout << endl;
+                }
+                cout << "------------------------------------------------------------"<<endl;
+
+            }
+
+            //BINARY SEARCH
+            else if(check==2) {
+                cout << "------------------------------------------------------------"<<endl;
                 cout << "BINARY SEARCH"<< endl;
+                binarySearchAlg binary;
 
-            }else if (check==3){
+                vector<int> binaryData;
+                int binarySize;
+                int binaryVal;
+
+                cout << "Size of the array: ";
+                cin>>binarySize;
+
+                for(int i =0;i<binarySize;i++) {
+                    cout << "Type number: ";
+                    cin >> binaryVal;
+                    binaryData.push_back(binaryVal);
+                }
+
+                sort(binaryData.begin(), binaryData.end());
+
+                int lookB;
+                cout << "Search: ";
+                cin >> lookB;
+
+                int n=binaryData.size();
+
+                int resultB = binary.binarySearch(binaryData, 0, n - 1, lookB);
+
+                if(resultB==-1) {
+                    cout << "Element not found!"<<endl;
+                }else {
+                    cout << "Element "<< lookB << " found at index "<< resultB;
+                    cout << endl;
+                }
+                cout << "------------------------------------------------------------"<<endl;
+            }
+
+            //RETURN
+            else if (check==3){
                 cout << "Sending you back to the menu..." << endl;
 
             }else {
@@ -68,8 +149,9 @@ int main() {
             cin >> check;
 
             if(check==1) {
+                cout << "------------------------------------------------------------"<<endl;
                 cout << "BUBBLE SORT"<< endl;
-                BubbleSortAlg bubbleSort;
+                BubbleSortAlg bubblesorter;
                 vector<int> bubble;
                 int bubbleSize;
                 int bubbleVal;
@@ -89,31 +171,131 @@ int main() {
                 }
                 cout << endl;
 
-                bubbleSort.bubbleSort(bubble);
+                bubblesorter.bubbleSort(bubble);
 
                 cout << "ORDERED ARRAY: ";
                 for(int i=0;i<bubble.size();i++) {
                     cout << bubble[i] << " ";
                 }
                 cout << endl;
+                cout << "------------------------------------------------------------"<<endl;
+            }
 
-
-            }else if(check==2) {
+            else if(check==2) {
+                cout << "------------------------------------------------------------"<<endl;
                 cout << "SELECTION SORT"<< endl;
+                selectSortAlg selection;
+                vector<int> selectData;
+                int selectSize;
+                int selectVal;
 
-            }else if(check==3) {
+                cout << "Size of the array: ";
+                cin>>selectSize;
+
+                for(int i =0;i<selectSize;i++) {
+                    cout << "Type number: ";
+                    cin >> selectVal;
+                    selectData.push_back(selectVal);
+                }
+
+                selection.selectionSort(selectData);
+
+                cout <<"ORDERED ARRAY:";
+                for(int num:selectData) {
+                    cout << num << ",";
+                }
+                cout << "------------------------------------------------------------"<<endl;
+            }
+
+            else if(check==3) {
+                cout << "------------------------------------------------------------"<<endl;
                 cout << "INSERTION SORT"<< endl;
+                insertionSortAlg insertAlg;
+                vector<int> insertAlgData;
+                int insertAlgSize;
+                int insertAlgVal;
 
-            }else if(check==4) {
+                cout << "Size of the array: ";
+                cin>>insertAlgSize;
+
+                for(int i =0;i<insertAlgSize;i++) {
+                    cout << "Type number: ";
+                    cin >> insertAlgVal;
+                    insertAlgData.push_back(insertAlgVal);
+                }
+
+                insertAlg.instertionSort(insertAlgData);
+                cout <<"ORDERED ARRAY:";
+                for(int num:insertAlgData) {
+                    cout << num << ",";
+                }
+                cout << "------------------------------------------------------------"<<endl;
+            }
+
+            else if(check==4) {
+                cout << "------------------------------------------------------------"<<endl;
                 cout << "MERGE SORT"<< endl;
+                mergeSortAlg merge;
+                vector<int> mergeData;
+                int mergeSize;
+                int mergeVal;
 
-            }else if(check==5) {
+                cout << "Size of the array: ";
+                cin>>mergeSize;
+
+                for(int i =0;i<mergeSize;i++) {
+                    cout << "Type number: ";
+                    cin >> mergeVal;
+                    mergeData.push_back(mergeVal);
+                }
+
+                merge.mergeSort(mergeData);
+                cout <<"ORDERED ARRAY:";
+                for(int num:mergeData) {
+                    cout << num << ",";
+                }
+                cout << "------------------------------------------------------------"<<endl;
+            }
+
+            else if(check==5) {
+                cout << "------------------------------------------------------------"<<endl;
                 cout << "QUICK SORT"<< endl;
+                quickSortAlg quick;
+                vector<int> quickData;
+                int quickSize;
+                int quickVal;
 
-            }else if(check==6) {
+                cout << "Size of the array: ";
+                cin>>quickSize;
+
+                for(int i =0;i<quickSize;i++) {
+                    cout << "Type number: ";
+                    cin >> quickVal;
+                    quickData.push_back(quickVal);
+                }
+
+                cout << "ORIGINAL ARRAY: ";
+                for(int i=0;i<quickData.size();i++) {
+                    cout << quickData[i] << " ";
+                }
+                cout << endl;
+
+                quick.quickSort(quickData, (quickData.size()-1));
+
+                cout << "ORDERED ARRAY: ";
+                for(int i=0;i<quickData.size();i++) {
+                    cout << quickData[i] << " ";
+                }
+                cout << endl;
+
+                cout << "------------------------------------------------------------"<<endl;
+            }
+
+            else if(check==6) {
                 cout << "Sending you back to the menu..." << endl;
+            }
 
-            }else {
+            else {
                 cout <<"It seems that option isn't available, try again"<<endl;
                 cout << "VISIT: ";
                 cin >> check;
@@ -130,18 +312,36 @@ int main() {
             cin >> check;
 
             if(check==1) {
+                cout << "------------------------------------------------------------"<<endl;
                 cout << "STACKS"<< endl;
 
-            }else if(check==2) {
+                cout << "------------------------------------------------------------"<<endl;
+
+            }
+
+            else if(check==2) {
+                cout << "------------------------------------------------------------"<<endl;
                 cout << "QUEUES"<< endl;
 
-            }else if(check==3) {
+                cout << "------------------------------------------------------------"<<endl;
+            }
+
+            else if(check==3) {
+                cout << "------------------------------------------------------------"<<endl;
                 cout << "LINKED LISTS"<< endl;
 
-            }else if(check==4) {
+                cout << "------------------------------------------------------------"<<endl;
+
+            }
+
+            else if(check==4) {
+                cout << "------------------------------------------------------------"<<endl;
                 cout << "Sending you back to the menu..." << endl;
 
-            }else {
+                cout << "------------------------------------------------------------"<<endl;
+            }
+
+            else {
                 cout <<"It seems that option isn't available, try again"<<endl;
                 cout << "VISIT: ";
                 cin >> check;
@@ -159,18 +359,37 @@ int main() {
             cin >> check;
 
             if(check==1) {
+                cout << "------------------------------------------------------------"<<endl;
                 cout << "BINARY TREE AVL"<< endl;
 
-            }else if(check==2) {
+                cout << "------------------------------------------------------------"<<endl;
+
+            }
+
+            else if(check==2) {
+                cout << "------------------------------------------------------------"<<endl;
                 cout << "DIJKSTRA"<< endl;
 
-            }else if(check==3) {
+                cout << "------------------------------------------------------------"<<endl;
+            }
+
+            else if(check==3) {
+                cout << "------------------------------------------------------------"<<endl;
                 cout << "DFS"<< endl;
 
-            }else if(check==4) {
+                cout << "------------------------------------------------------------"<<endl;
+
+            }
+
+            else if(check==4) {
+                cout << "------------------------------------------------------------"<<endl;
                 cout << "BFS"<< endl;
 
-            }else if(check==5) {
+                cout << "------------------------------------------------------------"<<endl;
+
+            }
+
+            else if(check==5) {
                 cout << "Sending you back to the menu..." << endl;
 
             }else {
@@ -196,13 +415,5 @@ int main() {
 
     cout << endl;
     cout << "------------------------------------------------------------"<<endl;
-
-
-
-
-
-
-
-
 
 }

@@ -5,8 +5,6 @@
 #include <array>
 #include <algorithm>
 
-
-
 //CODES
 #include "binarySearch.h"
 #include "linearSearch.h"
@@ -38,6 +36,8 @@ int main() {
     cout << "3. LINEAR DATA STRUCTURE" << endl;
     cout << "4. NON LINEAR DATA STRUCTURE" << endl;
     cout << "5. EXIT ARCHIVE"<< endl;
+
+    cout << "------------------------------------------------------------"<< endl;
 
     cout << "TYPE 'Y' TO ENTER ARCHIVES"<< endl;
     cout << "TYPE 'N' TO LEAVE" << endl;
@@ -401,8 +401,21 @@ int main() {
                 cout << "------------------------------------------------------------"<<endl;
                 cout << "LINKED LISTS"<< endl;
 
-                cout << "------------------------------------------------------------"<<endl;
+                Node* list = nullptr;
 
+                cout << "LIST OF NUMBERS TO BE ADDED" << endl;
+                cout << "20,100,40,2,6" << endl;
+
+                addNode(list,20);
+                addNode(list,100);
+                addNode(list,40);
+                addNode(list,2);
+                addNode(list,6);
+
+                cout << "LIST: ";
+                showList(list);
+
+                cout << "------------------------------------------------------------"<<endl;
             }
 
             //RETURN

@@ -22,4 +22,5 @@ add_executable(testTime main.cpp
         stacks.cpp
         dijkstra.h
         avlTree.h
-        BFS.h)
+        BFS.h
+        DFS.h)

@@ -21,6 +21,7 @@
 #include "dijkstra.h"
 #include "avlTree.h"
 #include "BFS.h"
+#include "DFS.h"
 
 using namespace std;
 
@@ -499,6 +500,34 @@ int main() {
                 cout << "------------------------------------------------------------"<<endl;
                 cout << "DFS"<< endl;
 
+                DFSstruct DFSfunc;
+
+                int dfsEdges;
+                cout << "NUMBER OF EDGES: ";
+                cin >> dfsEdges;
+                vector<vector<int>> adj(dfsEdges);
+
+                cout << "ENTER THE EDGES IN THE FOLLOWING FORMAT:" << endl;
+                cout << "node1 node2" << endl;
+                for (int i = 0; i < dfsEdges; i++) {
+                    int u;
+                    int v;
+                    cout << "INSERT: ";
+                    cin >> u >> v;
+
+                    adj[u].push_back(v);
+                    adj[v].push_back(u);
+                }
+
+                int start;
+                cout << "FROM WHAT POINT WILL IT START?" << endl;
+                cout << "STARTING POINT: ";
+                cin >> start;
+
+                cout << "DFS FROM "<< start << " to the end"<< endl;
+
+                DFSfunc.DFS(adj,start);
+
                 cout << "------------------------------------------------------------"<<endl;
 
             }
@@ -517,7 +546,9 @@ int main() {
                 cout << "ENTER THE EDGES IN THE FOLLOWING FORMAT:" << endl;
                 cout << "node1 node2" << endl;
                 for (int i = 0; i < numEdges; i++) {
-                    int u, v;
+                    int u;
+                    int v;
+                    cout << "INSERT: ";
                     cin >> u >> v;
 
                     graph[u].push_back(v);

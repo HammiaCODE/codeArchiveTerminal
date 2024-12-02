@@ -7,14 +7,14 @@
 #include <iostream>
 using namespace std;
 
-struct Node {
+struct Nodes {
     int data;
-    Node* next;
+    Nodes* next;
 };
 
 class LinkedList {
     private:
-    Node* head; // Private member to manage the head node
+    Nodes* head; // Private member to manage the head node
     public:
 
     LinkedList() : head(nullptr) {} // Constructor to initialize the list
@@ -26,14 +26,14 @@ class LinkedList {
 };
 
 void LinkedList::addNode(int value) {
-    Node* newNode = new Node();
+    Nodes* newNode = new Nodes();
     newNode->data = value;
     newNode->next = nullptr;
 
     if (head == nullptr) {
         head = newNode;
     } else {
-        Node* temp = head;
+        Nodes* temp = head;
         while (temp->next != nullptr) {
             temp = temp->next;
         }
@@ -42,7 +42,7 @@ void LinkedList::addNode(int value) {
 }
 
 void LinkedList::showList() {
-    Node* temp = head;
+    Nodes* temp = head;
     while (temp != nullptr) {
         cout << temp->data << " -> ";
         temp = temp->next;
@@ -51,9 +51,9 @@ void LinkedList::showList() {
 }
 
 LinkedList::~LinkedList() {
-    Node* temp = head;
+    Nodes* temp = head;
     while (temp != nullptr) {
-        Node* toDelete = temp;
+        Nodes* toDelete = temp;
         temp = temp->next;
         delete toDelete;
     }

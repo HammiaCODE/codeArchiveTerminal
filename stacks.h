@@ -8,19 +8,19 @@
 #include <iostream>;
 using namespace std;
 
-struct Node {
+struct NodeStack {
     int data;
-    Node* next;
+    NodeStack* next;
 };
 
 class Stack {
 private:
-    Node* topNode;
+    NodeStack* topNode;
 public:
     Stack(): topNode(nullptr){}
 
     void push(int value) {
-        Node* newNode = new Node();
+        NodeStack* newNode = new NodeStack();
         newNode->data = value;
         newNode->next = topNode;
         topNode = newNode;
@@ -31,7 +31,7 @@ public:
             cout << "el Stack esta vacio: " << endl;
             return;
         }
-        Node* temp = topNode;
+        NodeStack* temp = topNode;
         topNode = topNode->next;
         delete temp;
     }

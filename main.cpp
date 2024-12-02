@@ -328,15 +328,16 @@ int main() {
                 cin >> sizeS;
 
                 for(int i=0;i<sizeS;i++) {
-                    cout << "ADD TO QUEUE: ";
+                    cout << "ADD TO STACK: ";
+                    cin>>valS;
                     stacks.push(valS);
                 }
 
                 cout << "FRONT ELEMENT IS " << stacks.top() << endl;
-
-                cout << "ELIMMINATE AN ELEMENT OF THE STACK? (Y/N): ";
-
                 string elim;
+                cout << "ELIMMINATE AN ELEMENT OF THE STACK? (Y/N): ";
+                cin >> elim;
+
                 int numElim;
 
                 if(elim=="Y"||elim=="y") {
@@ -364,15 +365,16 @@ int main() {
 
                 for(int i=0;i<sizeQ;i++) {
                     cout << "ADD TO QUEUE: ";
+                    cin >> valQ;
                     q.enqueue(valQ);
                 }
 
                 cout << "FRONT ELEMENT IS " << q.peek() << endl;
 
-                cout << "ELIMMINATE AN ELEMENT OF THE QUEUE? (Y/N)" << endl;
-                cout << "ELIMMINATE: ";
-
                 string elim;
+                cout << "ELIMMINATE AN ELEMENT OF THE QUEUE? (Y/N): ";
+                cin >> elim;
+
                 int numElim;
 
                 if(elim=="Y"||elim=="y") {

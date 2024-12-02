@@ -56,4 +56,4 @@ int Queue::peek() {
 
 Queue::~Queue() {
     delete[] queue;
-}}
+}

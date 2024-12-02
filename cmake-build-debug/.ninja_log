@@ -5,3 +5,13 @@
 19	724	7548085568140308	CMakeFiles/testTime.dir/main.cpp.obj	d2af810fa47681f3
 32	347	7548085924115343	CMakeFiles/testTime.dir/stacks.cpp.obj	e469a55278a6a309
 48	1258	7548086772079583	CMakeFiles/testTime.dir/stacks.cpp.obj	e469a55278a6a309
+20	516	7548090028596166	CMakeFiles/testTime.dir/queues.cpp.obj	fff1a6c02d7a79ea
+10	650	7548090028497204	CMakeFiles/testTime.dir/main.cpp.obj	d2af810fa47681f3
+651	798	7548090034894372	testTime.exe	725f655aa0fd728a
+17	338	7548092147120980	CMakeFiles/testTime.dir/stacks.cpp.obj	e469a55278a6a309
+8	544	7548092147025560	CMakeFiles/testTime.dir/main.cpp.obj	d2af810fa47681f3
+545	680	7548092152390025	testTime.exe	725f655aa0fd728a
+5	557	7548093267524716	CMakeFiles/testTime.dir/main.cpp.obj	d2af810fa47681f3
+557	662	7548093273053113	testTime.exe	725f655aa0fd728a
+5	618	7548094130980616	CMakeFiles/testTime.dir/main.cpp.obj	d2af810fa47681f3
+618	723	7548094137105734	testTime.exe	725f655aa0fd728a

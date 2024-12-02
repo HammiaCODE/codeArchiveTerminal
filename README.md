@@ -1,0 +1,5 @@
+ARCHIVO DE ALGORITMOS Y ESTRUCTURAS DE DATOS DE LA CLASE TC1031.604
+BAJO SUPERVISION DEL PROFESOR David Sánchez Hurtado
+
+VIDEO DE PRUEBAS:
+https://drive.google.com/file/d/1yHhQj9u6miww5wx6oXb66rlPqLRNN7RW/view?usp=sharing

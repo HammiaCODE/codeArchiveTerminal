@@ -19,4 +19,7 @@ add_executable(testTime main.cpp
         linkedList.h
         linkedList.cpp
         queues.cpp
-        stacks.cpp)
+        stacks.cpp
+        dijkstra.h
+        avlTree.h
+        BFS.h)

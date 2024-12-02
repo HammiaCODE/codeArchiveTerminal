@@ -18,6 +18,9 @@
 #include "linkedList.h"
 #include "queues.h"
 #include "stacks.h"
+#include "dijkstra.h"
+#include "avlTree.h"
+#include "BFS.h"
 
 using namespace std;
 
@@ -41,7 +44,6 @@ int main() {
     cin >> stringCheck;
 
     while (stringCheck=="Y"||stringCheck=="y") {
-
         cout << "TYPE THE NUMBER OF THE ARCHIVE YOU WANT TO VISIT."<<endl;
         cout << "VISIT: ";
         cin >> check;
@@ -56,7 +58,6 @@ int main() {
             cin >> check;
 
             //LINEAR SEARCH
-
             if(check==1) {
                 cout << "------------------------------------------------------------"<<endl;
                 cout << "LINEAR SEARCH"<< endl;
@@ -133,13 +134,13 @@ int main() {
             else if (check==3){
                 cout << "Sending you back to the menu..." << endl;
 
-            }else {
+            }else{
                 cout <<"It seems that option isn't available, try again"<<endl;
                 cout << "VISIT: ";
                 cin >> check;
             }
 
-        }else if (check==2) {
+        } else if (check==2) {
             cout << "1. BUBBLE SORT" << endl;
             cout << "2. SELECTION SORT" <<endl;
             cout << "3. INSERTION SORT" << endl;
@@ -151,6 +152,7 @@ int main() {
             cout << "VISIT: ";
             cin >> check;
 
+            //BUBBLE SORT
             if(check==1) {
                 cout << "------------------------------------------------------------"<<endl;
                 cout << "BUBBLE SORT"<< endl;
@@ -184,6 +186,7 @@ int main() {
                 cout << "------------------------------------------------------------"<<endl;
             }
 
+            //SELECTION SORT
             else if(check==2) {
                 cout << "------------------------------------------------------------"<<endl;
                 cout << "SELECTION SORT"<< endl;
@@ -211,6 +214,7 @@ int main() {
                 cout << "------------------------------------------------------------"<<endl;
             }
 
+            //INSERTION SORT
             else if(check==3) {
                 cout << "------------------------------------------------------------"<<endl;
                 cout << "INSERTION SORT"<< endl;
@@ -237,6 +241,7 @@ int main() {
                 cout << "------------------------------------------------------------"<<endl;
             }
 
+            //MERGE SORT
             else if(check==4) {
                 cout << "------------------------------------------------------------"<<endl;
                 cout << "MERGE SORT"<< endl;
@@ -263,6 +268,7 @@ int main() {
                 cout << "------------------------------------------------------------"<<endl;
             }
 
+            //QUICK SORT
             else if(check==5) {
                 cout << "------------------------------------------------------------"<<endl;
                 cout << "QUICK SORT"<< endl;
@@ -296,11 +302,10 @@ int main() {
                 cout << "------------------------------------------------------------"<<endl;
             }
 
+            //RETURN
             else if(check==6) {
                 cout << "Sending you back to the menu..." << endl;
-            }
-
-            else {
+            }else {
                 cout <<"It seems that option isn't available, try again"<<endl;
                 cout << "VISIT: ";
                 cin >> check;
@@ -316,6 +321,7 @@ int main() {
             cout << "VISIT: ";
             cin >> check;
 
+            //STACKS
             if(check==1) {
                 cout << "------------------------------------------------------------"<<endl;
                 cout << "STACKS"<< endl;
@@ -352,6 +358,7 @@ int main() {
 
             }
 
+            //QUEUES
             else if(check==2) {
                 cout << "------------------------------------------------------------"<<endl;
                 cout << "QUEUES"<< endl;
@@ -388,6 +395,7 @@ int main() {
                 cout << "------------------------------------------------------------"<<endl;
             }
 
+            //LINKED LISTS
             else if(check==3) {
                 cout << "------------------------------------------------------------"<<endl;
                 cout << "LINKED LISTS"<< endl;
@@ -396,14 +404,10 @@ int main() {
 
             }
 
+            //RETURN
             else if(check==4) {
-                cout << "------------------------------------------------------------"<<endl;
                 cout << "Sending you back to the menu..." << endl;
-
-                cout << "------------------------------------------------------------"<<endl;
-            }
-
-            else {
+            }else {
                 cout <<"It seems that option isn't available, try again"<<endl;
                 cout << "VISIT: ";
                 cin >> check;
@@ -420,21 +424,77 @@ int main() {
             cout << "VISIT: ";
             cin >> check;
 
+            //AVL
             if(check==1) {
                 cout << "------------------------------------------------------------"<<endl;
-                cout << "BINARY TREE AVL"<< endl;
+                cout << "BINARY TREE AVL" << endl;
+
+                AVLTree<int> avlStructure;
+
+                int capacity;
+                cout << "HOW MANY NODES WILL BE ADDED?: ";
+                cin >> capacity;
+
+                for (int i = 0; i < capacity; i++) {
+                    int value;
+                    cout << "INSERT: ";
+                    cin >> value;
+                    avlStructure.insert(value);
+                }
+
+                cout << "THE AVL TREE IS: " << endl;
+                avlStructure.visualize();
 
                 cout << "------------------------------------------------------------"<<endl;
-
             }
 
+            //DIJKSTRA
             else if(check==2) {
                 cout << "------------------------------------------------------------"<<endl;
                 cout << "DIJKSTRA"<< endl;
+                int numNodes;
+                cout << "NUMBER OF NODES: ";
+                cin >> numNodes;
 
+                vector<vector<pair<int, int>>> graph(numNodes);
+
+                int edges;
+                cout << "NUMBER OF EDGES: ";
+                cin >> edges;
+
+                cout << "ENTER THE EDGES IN THE FOLLOWING FORMAT: source destination weight" << endl;
+                cout << "EXAMPLE: 'Edge 1: 0 1 2'" << endl;
+
+                for (int i = 0; i < edges; i++) {
+                    int src, dest, weight;
+                    cout << "Edge " << i + 1 << ": ";
+                    cin >> src >> dest >> weight;
+
+                    graph[src].emplace_back(dest, weight);
+                }
+
+                int source;
+                cout << "Enter the source node for Dijkstra's algorithm: ";
+                cin >> source;
+
+                try {
+                    vector<int> distances = Dijkstra::dijkstra(numNodes, source, graph);
+
+                    cout << "Shortest distances from node " << source << " are:" << endl;
+                    for (int i = 0; i < numNodes; i++) {
+                        if (distances[i] == Dijkstra::INF) {
+                            cout << "NODE " << i << ": UNREACHABLE!!! :( " << endl;
+                        } else {
+                            cout << "NODE " << i << ": " << distances[i] << endl;
+                        }
+                    }
+                } catch (const invalid_argument& e) {
+                    cerr << "ERROR: " << e.what() << endl;
+                }
                 cout << "------------------------------------------------------------"<<endl;
             }
 
+            //DFS
             else if(check==3) {
                 cout << "------------------------------------------------------------"<<endl;
                 cout << "DFS"<< endl;
@@ -443,17 +503,39 @@ int main() {
 
             }
 
+            //BFS
             else if(check==4) {
                 cout << "------------------------------------------------------------"<<endl;
                 cout << "BFS"<< endl;
+                unordered_map<int, vector<int>> graph;
+                int numEdges;
+                int startNode;
+
+                cout << "ENTER THE NUMBER OF EDGES ";
+                cin >> numEdges;
+
+                cout << "ENTER THE EDGES IN THE FOLLOWING FORMAT:" << endl;
+                cout << "node1 node2" << endl;
+                for (int i = 0; i < numEdges; i++) {
+                    int u, v;
+                    cin >> u >> v;
+
+                    graph[u].push_back(v);
+                    graph[v].push_back(u);
+                }
+
+                displayGraph(graph);
+
+                cout << "ENTER THE STARTING NODE: ";
+                cin >> startNode;
+
+                cin.ignore();
+                bfsInteractive(graph, startNode);
 
                 cout << "------------------------------------------------------------"<<endl;
 
-            }
-
-            else if(check==5) {
+            }else if(check==5) {
                 cout << "Sending you back to the menu..." << endl;
-
             }else {
                 cout <<"It seems that option isn't available, try again"<<endl;
                 cout << "VISIT: ";
@@ -472,10 +554,7 @@ int main() {
         cout << endl;
         cout << "ACCESS THE ARCHIVES (Y/N): ";
         cin >> stringCheck;
-
     }
-
     cout << endl;
-    cout << "------------------------------------------------------------"<<endl;
-
+    cout << "------------------------------------------------------------"<< endl;
 }

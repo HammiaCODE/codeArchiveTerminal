@@ -414,6 +414,7 @@ int main() {
 
                 cout << "LIST: ";
                 showList(list);
+                cout << endl;
 
                 cout << "------------------------------------------------------------"<<endl;
             }
@@ -458,6 +459,7 @@ int main() {
 
                 cout << "THE AVL TREE IS: " << endl;
                 avlStructure.visualize();
+                cout << endl;
 
                 cout << "------------------------------------------------------------"<<endl;
             }
@@ -505,6 +507,7 @@ int main() {
                 } catch (const invalid_argument& e) {
                     cerr << "ERROR: " << e.what() << endl;
                 }
+                cout << endl;
                 cout << "------------------------------------------------------------"<<endl;
             }
 
@@ -540,6 +543,7 @@ int main() {
                 cout << "DFS FROM "<< start << " to the end"<< endl;
 
                 DFSfunc.DFS(adj,start);
+                cout << endl;
 
                 cout << "------------------------------------------------------------"<<endl;
 
@@ -575,7 +579,7 @@ int main() {
 
                 cin.ignore();
                 bfsInteractive(graph, startNode);
-
+                cout << endl;
                 cout << "------------------------------------------------------------"<<endl;
 
             }else if(check==5) {
@@ -587,6 +591,8 @@ int main() {
             }
 
         }else if (check==5) {
+            cout << endl;
+            cout << "YOU CHOSE TO EXIT."<<endl;
             cout << "THANKS FOR VIEWING THE CODE ARCHIVE" << endl;
             cout << "CLOSING PROGRAM..." << endl;
             break;
@@ -596,6 +602,18 @@ int main() {
         }
 
         cout << endl;
+
+        cout << "------------------CODE ARCHIVE-----------------------"<<endl;
+        cout << "MENU" << endl;
+
+        cout << "1. SEARCH ALGORITHMS" << endl;
+        cout << "2. SORTING ALGORITHMS" <<endl;
+        cout << "3. LINEAR DATA STRUCTURE" << endl;
+        cout << "4. NON LINEAR DATA STRUCTURE" << endl;
+        cout << "5. EXIT ARCHIVE"<< endl;
+
+        cout << "------------------------------------------------------------"<< endl;
+
         cout << "ACCESS THE ARCHIVES (Y/N): ";
         cin >> stringCheck;
     }

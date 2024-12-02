@@ -13,4 +13,10 @@ add_executable(testTime main.cpp
         quickSort.h
         quickSort.h
         insertionSort.h
-        insertionSort.h)
+        insertionSort.h
+        stacks.h
+        queues.h
+        linkedList.h
+        linkedList.cpp
+        queues.cpp
+        stacks.cpp)

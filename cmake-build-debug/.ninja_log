@@ -1,3 +1,7 @@
 # ninja log v6
-34	663	7548031452987696	CMakeFiles/testTime.dir/main.cpp.obj	d2af810fa47681f3
-664	803	7548031459286952	testTime.exe	708bdf99eb8a1a1
+13	918	7548051611021866	CMakeFiles/testTime.dir/main.cpp.obj	d2af810fa47681f3
+919	1113	7548051620020445	testTime.exe	708bdf99eb8a1a1
+34	142	7548085568291865	CMakeFiles/testTime.dir/linkedList.cpp.obj	4a7e5de18e9114f0
+19	724	7548085568140308	CMakeFiles/testTime.dir/main.cpp.obj	d2af810fa47681f3
+32	347	7548085924115343	CMakeFiles/testTime.dir/stacks.cpp.obj	e469a55278a6a309
+48	1258	7548086772079583	CMakeFiles/testTime.dir/stacks.cpp.obj	e469a55278a6a309

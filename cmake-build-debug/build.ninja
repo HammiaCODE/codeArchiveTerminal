@@ -55,6 +55,24 @@ build CMakeFiles/testTime.dir/main.cpp.obj: CXX_COMPILER__testTime_unscanned_Deb
   OBJECT_DIR = CMakeFiles\testTime.dir
   OBJECT_FILE_DIR = CMakeFiles\testTime.dir
 
+build CMakeFiles/testTime.dir/linkedList.cpp.obj: CXX_COMPILER__testTime_unscanned_Debug C$:/Users/hanes/Desktop/UNI$ HAM/SAGA$ DE$ C++/projectArchive/linkedList.cpp || cmake_object_order_depends_target_testTime
+  DEP_FILE = CMakeFiles\testTime.dir\linkedList.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\testTime.dir
+  OBJECT_FILE_DIR = CMakeFiles\testTime.dir
+
+build CMakeFiles/testTime.dir/queues.cpp.obj: CXX_COMPILER__testTime_unscanned_Debug C$:/Users/hanes/Desktop/UNI$ HAM/SAGA$ DE$ C++/projectArchive/queues.cpp || cmake_object_order_depends_target_testTime
+  DEP_FILE = CMakeFiles\testTime.dir\queues.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\testTime.dir
+  OBJECT_FILE_DIR = CMakeFiles\testTime.dir
+
+build CMakeFiles/testTime.dir/stacks.cpp.obj: CXX_COMPILER__testTime_unscanned_Debug C$:/Users/hanes/Desktop/UNI$ HAM/SAGA$ DE$ C++/projectArchive/stacks.cpp || cmake_object_order_depends_target_testTime
+  DEP_FILE = CMakeFiles\testTime.dir\stacks.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\testTime.dir
+  OBJECT_FILE_DIR = CMakeFiles\testTime.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target testTime
@@ -63,7 +81,7 @@ build CMakeFiles/testTime.dir/main.cpp.obj: CXX_COMPILER__testTime_unscanned_Deb
 #############################################
 # Link the executable testTime.exe
 
-build testTime.exe: CXX_EXECUTABLE_LINKER__testTime_Debug CMakeFiles/testTime.dir/main.cpp.obj
+build testTime.exe: CXX_EXECUTABLE_LINKER__testTime_Debug CMakeFiles/testTime.dir/main.cpp.obj CMakeFiles/testTime.dir/linkedList.cpp.obj CMakeFiles/testTime.dir/queues.cpp.obj CMakeFiles/testTime.dir/stacks.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\testTime.dir

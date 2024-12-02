@@ -15,6 +15,9 @@
 #include "selectionSort.h"
 #include "quickSort.h"
 #include "insertionSort.h"
+#include "linkedList.h"
+#include "queues.h"
+#include "stacks.h"
 
 using namespace std;
 
@@ -204,6 +207,7 @@ int main() {
                 for(int num:selectData) {
                     cout << num << ",";
                 }
+                cout << endl;
                 cout << "------------------------------------------------------------"<<endl;
             }
 
@@ -229,6 +233,7 @@ int main() {
                 for(int num:insertAlgData) {
                     cout << num << ",";
                 }
+                cout << endl;
                 cout << "------------------------------------------------------------"<<endl;
             }
 
@@ -254,6 +259,7 @@ int main() {
                 for(int num:mergeData) {
                     cout << num << ",";
                 }
+                cout << endl;
                 cout << "------------------------------------------------------------"<<endl;
             }
 
@@ -287,7 +293,6 @@ int main() {
                     cout << quickData[i] << " ";
                 }
                 cout << endl;
-
                 cout << "------------------------------------------------------------"<<endl;
             }
 
@@ -315,6 +320,33 @@ int main() {
                 cout << "------------------------------------------------------------"<<endl;
                 cout << "STACKS"<< endl;
 
+                Stack stacks;
+
+                int sizeS;
+                int valS;
+                cout << "STACK SIZE: ";
+                cin >> sizeS;
+
+                for(int i=0;i<sizeS;i++) {
+                    cout << "ADD TO QUEUE: ";
+                    stacks.push(valS);
+                }
+
+                cout << "FRONT ELEMENT IS " << stacks.top() << endl;
+
+                cout << "ELIMMINATE AN ELEMENT OF THE STACK? (Y/N): ";
+
+                string elim;
+                int numElim;
+
+                if(elim=="Y"||elim=="y") {
+                    stacks.pop();
+                    cout << "NEW FRONT ELEMENT IS "<< stacks.top() << endl;
+                }else {
+                    cout << "NO CHANGES WERE MADE." << endl;
+                }
+                cout << endl;
+
                 cout << "------------------------------------------------------------"<<endl;
 
             }
@@ -322,6 +354,34 @@ int main() {
             else if(check==2) {
                 cout << "------------------------------------------------------------"<<endl;
                 cout << "QUEUES"<< endl;
+
+                int sizeQ;
+                int valQ;
+                cout << "QUEUE SIZE: ";
+                cin >> sizeQ;
+
+                Queue q(sizeQ);
+
+                for(int i=0;i<sizeQ;i++) {
+                    cout << "ADD TO QUEUE: ";
+                    q.enqueue(valQ);
+                }
+
+                cout << "FRONT ELEMENT IS " << q.peek() << endl;
+
+                cout << "ELIMMINATE AN ELEMENT OF THE QUEUE? (Y/N)" << endl;
+                cout << "ELIMMINATE: ";
+
+                string elim;
+                int numElim;
+
+                if(elim=="Y"||elim=="y") {
+                    q.dequeue();
+                    cout << "NEW FRONT ELEMENT IS "<< q.peek() << endl;
+                }else {
+                    cout << "NO CHANGES WERE MADE." << endl;
+                }
+                cout << endl;
 
                 cout << "------------------------------------------------------------"<<endl;
             }
